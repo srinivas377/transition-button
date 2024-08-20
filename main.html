@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Toggle Button with Background</title>
+    <link rel="stylesheet" href="C:\Users\91970\Downloads\batman.jpg">
+  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container" id="container">
+        <p id="text">This is some elegant text inside the container.</p>
+        <button id="toggleButton"><i class="fas fa-magic"></i> Click me</button>
+    </div>
+
+    <script>
+        const button = document.getElementById('toggleButton');
+        const container = document.getElementById('container');
+        const text = document.getElementById('text');
+        
+        let toggled = false;
+
+        button.addEventListener('click', () => {
+            if (!toggled) {
+                button.innerHTML = '<i class="fas fa-check-circle"></i> Clicked!';
+                text.textContent = 'Text has magically changed!';
+                container.classList.add('toggled');
+            } else {
+                button.innerHTML = '<i class="fas fa-magic"></i> Click me';
+                text.textContent = 'This is some elegant text inside the container.';
+                container.classList.remove('toggled');
+            }
+            toggled = !toggled;
+        });
+    </script>
+</body>
+</html>
